@@ -1,0 +1,60 @@
+@import "~sanitize.css/sanitize.css"
+
+body
+  font-family: "calluna", serif
+  font-size: 18px
+  line-height: 26px
+  font-style: normal
+  font-weight: 300
+  background-color: #3C1781
+  color: #DFCDFF
+  padding-left: 30px
+  padding-right: 30px
+
+  @media (min-width: 480px)
+    font-size: 22px
+    line-height: 32px
+
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-font-feature-settings: "liga" on
+
+em
+  font-style: normal
+  font-weight: 700
+  color: #FFF
+a
+  color: #FFF
+  font-style: normal
+  font-weight: 700
+  text-decoration: none
+  border-bottom: 1px solid #5C5C5C
+  &:hover
+    border-color: #FFF
+
+.content
+  max-width: 792px
+  margin-right: auto
+  margin-left: auto
+  margin-top: 100px
+  @media (min-width: 480px)
+    margin-top: 300px
+.not_found
+  text-align: center
+  font-size: 40px
+  @media (min-width: 480px)
+    font-size: 90px
+
+small
+  color: #5C5C5C
+  em
+    color: #FFF
+    &.smile
+      padding-left: 10px
+      display: inline-block
+      transition: transform .4s ease-in, font-weight .2s ease-in
+      font-weight: 300
+      &:hover
+        font-weight: 700
+        transform: rotate(90deg)
