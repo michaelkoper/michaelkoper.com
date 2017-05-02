@@ -1,0 +1,6 @@
+# www.robotstxt.org/
+# http://code.google.com/web/controlcrawlindex/
+
+User-agent: *
+Allow: /
+Sitemap: http://michaelkoper.com/sitemap.xml
