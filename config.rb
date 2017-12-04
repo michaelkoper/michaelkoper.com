@@ -23,6 +23,12 @@ activate :s3_sync do |s3_sync|
   s3_sync.error_document             = '404.html'
 end
 
+caching_policy 'text/html', cache_control: {max_age: 7200, must_revalidate: true}, content_encoding: 'gzip'
+caching_policy 'image/png', cache_control: {max_age: 31536000, public: true}, content_encoding: 'gzip'
+caching_policy 'image/jpeg', cache_control: {max_age: 31536000, public: true}, content_encoding: 'gzip'
+caching_policy 'text/css', cache_control: {max_age: 31536000, public: true}, content_encoding: 'gzip'
+caching_policy 'application/javascript', cache_control: {max_age: 31536000, public: true}, content_encoding: 'gzip'
+
 configure :development do
   activate :livereload
 end
