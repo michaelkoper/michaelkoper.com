@@ -77,7 +77,7 @@ GEM
       rack-livereload (~> 0.3.15)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2018.0812)
+    mime-types-data (3.2019.0331)
     minitest (5.11.3)
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
