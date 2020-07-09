@@ -1,7 +1,7 @@
 // webpack.config.js
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var Clean = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -22,7 +22,7 @@ module.exports = {
     filename: 'assets/javascript/[name].bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -75,7 +75,9 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
-    new Clean(['.tmp']),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['.tmp']
+    }),
     new ExtractTextPlugin("assets/stylesheets/[name].bundle.css"),
   ],
 
