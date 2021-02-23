@@ -1,6 +1,6 @@
 {
   "name": "michaelkoper",
-  "version": "1.22.10",
+  "version": "1.0.0",
   "description": "Website of Michael Koper",
   "main": "index.js",
   "scripts": {
