@@ -13,7 +13,5 @@
     "esbuild": "^0.14.54"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "sanitize.css": "^12.0.1"
   }
 }
