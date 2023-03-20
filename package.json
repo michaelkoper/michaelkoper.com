@@ -4,28 +4,13 @@
   "description": "Website of Michael Koper",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color",
-    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
+    "start": "node esbuild.config.js --watch",
+    "build": "node esbuild.config.js"
   },
   "author": "Michael Koper",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.13.1",
-    "@babel/preset-env": "^7.13.0",
-    "autoprefixer": "^10.2.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.2.2",
-    "babel-preset-env": "^1.7.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^5.0.2",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "node-sass": "^5.0.0",
-    "postcss": "^8.2.6",
-    "postcss-loader": "^5.0.0",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^5.24.0",
-    "webpack-cli": "^4.5.0"
+    "esbuild": "^0.14.54"
   },
   "dependencies": {
     "lodash": "^4.17.21",

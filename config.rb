@@ -1,19 +1,15 @@
-
-activate :external_pipeline,
-  name: :webpack,
-  command: build? ?  "yarn run build" : "yarn run start",
-  source: ".tmp/dist",
-  latency: 1
+activate :external_pipeline do |pipeline|
+  pipeline.name = :esbuild
+  pipeline.command = build? ? "node esbuild.config.js" : "node esbuild.config.js --watch"
+  pipeline.source = 'tmp/dist'
+  pipeline.latency = 1
+end
 
 activate :directory_indexes
 
 configure :development do
   activate :livereload
 end
-
-set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascript'
-set :images_dir, 'images'
 
 page "/sitemap.xml", layout: false
 page "/404.html", directory_index: false

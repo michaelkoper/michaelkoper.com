@@ -12,7 +12,7 @@
 
     <title><%= current_page.data.title || "Personal website of Michael Koper - Co-founder Nusii - Software Engineer" %></title>
 
-    <%= stylesheet_link_tag "main.bundle" %>
+    <%= stylesheet_link_tag "main" %>
 
     <link rel="canonical" href="https://michaelkoper.com/" /  >
 
@@ -34,6 +34,6 @@
     <div class="content">
       <%= yield %>
     </div>
-    <%= javascript_include_tag "main.bundle" %>
+    <%= javascript_include_tag "main" %>
   </body>
 </html>
