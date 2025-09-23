@@ -12,7 +12,7 @@
 
     <title><%= current_page.data.title || "Personal website of Michael Koper - Co-founder Nusii - Software Engineer" %></title>
 
-    <%= stylesheet_link_tag "main" %>
+    <%= stylesheet_link_tag "tailwind" %>
 
     <link rel="canonical" href="https://michaelkoper.com/" /  >
 
@@ -30,8 +30,8 @@
 
     <script src="https://cdn.usefathom.com/script.js" data-site="LNDZXZRW" defer></script>
   </head>
-  <body>
-    <div class="content">
+  <body class="font-calluna text-lg leading-relaxed font-light bg-purple-dark text-purple-light px-8 antialiased md:text-2xl md:leading-8">
+    <div class="max-w-3xl mx-auto mt-24 md:mt-72">
       <%= yield %>
     </div>
     <%= javascript_include_tag "main" %>

@@ -6,7 +6,11 @@
       "Bash(bundle install:*)",
       "Bash(bundle exec middleman:*)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "WebSearch",
+      "Bash(npx @tailwindcss/cli:*)"
     ],
     "deny": [],
     "ask": []
