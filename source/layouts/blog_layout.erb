@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <% description = current_page.data.description || "Michael Koper, a Dutch full-stack developer living in Madrid, Spain. Founder of Nusii" %>
+    <% title = current_page.data.title || "Blog - Michael Koper" %>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="ROBOTS" content="INDEX,FOLLOW">
+    <meta name="description" content="<%= description %>">
+    <meta name="author" content="Michael Koper">
+
+    <title><%= title %> - Michael Koper</title>
+
+    <%= stylesheet_link_tag "main" %>
+
+    <link rel="canonical" href="https://michaelkoper.com<%= current_page.url %>" />
+
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:url" content="https://michaelkoper.com<%= current_page.url %>" />
+    <meta property="og:description" content="<%= description %>" />
+    <meta property="og:site_name" content="Michael Koper" />
+
+    <meta property="twitter:description" content="<%= description %>" />
+    <meta property="twitter:site" content="@michaelkoper" />
+    <meta property="twitter:creator" content="@michaelkoper" />
+
+    <script src="https://use.typekit.net/hyd3srd.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script src="https://cdn.usefathom.com/script.js" data-site="LNDZXZRW" defer></script>
+  </head>
+  <body>
+    <div class="content">
+      <article>
+        <%= yield %>
+      </article>
+
+      <hr style="margin: 40px 0;">
+
+      <p><a href="/blog/">← Back to blog</a></p>
+    </div>
+    <%= javascript_include_tag "main" %>
+  </body>
+</html>

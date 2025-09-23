@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(grep:*)",
-      "Bash(bundle version:*)"
+      "Bash(bundle version:*)",
+      "Bash(bundle install:*)",
+      "Bash(bundle exec middleman:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": []
