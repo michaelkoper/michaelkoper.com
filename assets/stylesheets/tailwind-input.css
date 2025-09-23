@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Custom colors from the original design */
+  --color-purple-dark: #3C1781;
+  --color-purple-light: #DFCDFF;
+  --color-lime: #A7B911;
+  --color-gray-border: #5C5C5C;
+  --color-yellow-hover: #BD8C11;
+
+  /* Custom font family */
+  --font-calluna: "calluna", serif;
+}
+
+/* Custom styles for SVG icons */
+@layer utilities {
+  .social-icon svg {
+    margin-top: -11px;
+  }
+
+  .social-icon svg path {
+    transition: fill 0.1s linear;
+    fill: #DFCDFF;
+  }
+
+  .social-icon:hover svg path {
+    fill: #BD8C11;
+  }
+}

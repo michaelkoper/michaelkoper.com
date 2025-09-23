@@ -10,8 +10,9 @@
   "author": "Michael Koper",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.14.54"
-  },
-  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "@tailwindcss/typography": "^0.5.18",
+    "esbuild": "^0.14.54",
+    "tailwindcss": "^4.1.13"
   }
 }

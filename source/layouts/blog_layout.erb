@@ -2,7 +2,7 @@
 <html>
   <head>
     <% description = current_page.data.description || "Michael Koper, a Dutch full-stack developer living in Madrid, Spain. Founder of Nusii" %>
-    <% title = current_page.data.title || "Personal website of Michael Koper - Founder Nusii" %>
+    <% title = current_page.data.title || "Blog - Michael Koper" %>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,14 +10,14 @@
     <meta name="description" content="<%= description %>">
     <meta name="author" content="Michael Koper">
 
-    <title><%= current_page.data.title || "Personal website of Michael Koper - Co-founder Nusii - Software Engineer" %></title>
+    <title><%= title %> - Michael Koper</title>
 
     <%= stylesheet_link_tag "tailwind" %>
 
-    <link rel="canonical" href="https://michaelkoper.com/" /  >
+    <link rel="canonical" href="https://michaelkoper.com<%= current_page.url %>" />
 
     <meta property="og:title" content="<%= title %>" />
-    <meta property="og:url" content="https://michaelkoper.com/" />
+    <meta property="og:url" content="https://michaelkoper.com<%= current_page.url %>" />
     <meta property="og:description" content="<%= description %>" />
     <meta property="og:site_name" content="Michael Koper" />
 
@@ -32,7 +32,13 @@
   </head>
   <body class="font-calluna text-lg leading-relaxed font-light bg-purple-dark text-purple-light px-8 antialiased md:text-2xl md:leading-8">
     <div class="max-w-3xl mx-auto mt-24 md:mt-72">
-      <%= yield %>
+      <article class="prose prose-lg prose-invert max-w-none">
+        <%= yield %>
+      </article>
+
+      <hr class="my-10 border-gray-border">
+
+      <p><a href="/blog/" class="text-white font-bold no-underline border-b border-gray-border hover:border-white transition-colors">← Back to blog</a></p>
     </div>
     <%= javascript_include_tag "main" %>
   </body>
