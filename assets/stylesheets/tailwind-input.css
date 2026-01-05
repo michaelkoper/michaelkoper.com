@@ -27,4 +27,9 @@
   .social-icon:hover svg path {
     fill: #BD8C11;
   }
+
+  [aria-current="page"] {
+    color: white;
+    border-color: #DFCDFF;
+  }
 }
