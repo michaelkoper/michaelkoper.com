@@ -3,11 +3,11 @@
 
 @theme {
   /* Custom colors from the original design */
-  --color-purple-dark: #3C1781;
-  --color-purple-light: #DFCDFF;
-  --color-lime: #A7B911;
-  --color-gray-border: #5C5C5C;
-  --color-yellow-hover: #BD8C11;
+  --color-purple-dark: #3c1781;
+  --color-purple-light: #dfcdff;
+  --color-lime: #a7b911;
+  --color-gray-border: #5c5c5c;
+  --color-yellow-hover: #bd8c11;
 
   /* Custom font family */
   --font-calluna: "calluna", serif;
@@ -21,15 +21,19 @@
 
   .social-icon svg path {
     transition: fill 0.1s linear;
-    fill: #DFCDFF;
+    fill: #dfcdff;
   }
 
   .social-icon:hover svg path {
-    fill: #BD8C11;
+    fill: #bd8c11;
   }
 
   [aria-current="page"] {
     color: white;
-    border-color: #DFCDFF;
+    border-color: #dfcdff;
+  }
+
+  .prose figcaption {
+    @apply text-center mt-2;
   }
 }
