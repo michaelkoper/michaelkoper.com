@@ -40,8 +40,14 @@ helpers do
     options = args.extract_options!
     url = args[block_given? ? 0 : 1]
 
-    if url && current_resource.url == url_for(url)
-      options['aria-current'] = :page
+    if url
+      target_url = url_for(url)
+      current_url = current_resource.url
+
+      is_current = current_url == target_url ||
+        (target_url.end_with?('/') && target_url != '/' && current_url.start_with?(target_url))
+
+      options['aria-current'] = :page if is_current
     end
 
     super(*args, options, &block)
