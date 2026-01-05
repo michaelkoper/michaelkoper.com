@@ -1,10 +1,9 @@
 activate :blog do |blog|
-  blog.prefix = "blog"
-  blog.sources = "articles/{title}.html"
+  blog.prefix = "articles"
+  blog.sources = "{title}.html"
   blog.permalink = "{title}.html"
   blog.layout = "blog_layout"
   blog.default_extension = ".md"
-  blog.new_article_template = File.expand_path("source/blog/article_template.erb", __FILE__)
 end
 
 activate :external_pipeline do |pipeline|
