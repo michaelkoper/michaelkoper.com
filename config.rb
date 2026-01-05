@@ -36,4 +36,15 @@ helpers do
     return File.read(file_path) if File.exists?(file_path)
     '(not found)'
   end
+
+  def link_to(*args, &block)
+    options = args.extract_options!
+    url = args[block_given? ? 0 : 1]
+
+    if url && current_resource.url == url_for(url)
+      options['aria-current'] = :page
+    end
+
+    super(*args, options, &block)
+  end
 end

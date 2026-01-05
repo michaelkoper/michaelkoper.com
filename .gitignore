@@ -9,3 +9,4 @@ node_modules/
 *.swp
 
 .s3_sync
+.claude/settings.local.json

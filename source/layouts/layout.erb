@@ -31,7 +31,8 @@
     <script src="https://cdn.usefathom.com/script.js" data-site="LNDZXZRW" defer></script>
   </head>
   <body class="font-calluna text-lg leading-relaxed font-light bg-purple-dark text-purple-light px-8 antialiased md:text-2xl md:leading-8">
-    <div class="max-w-3xl mx-auto mt-24 md:mt-72">
+    <%= partial "header" %>
+    <div class="max-w-3xl mx-auto mt-12 md:mt-48">
       <%= yield %>
     </div>
     <%= javascript_include_tag "main" %>
