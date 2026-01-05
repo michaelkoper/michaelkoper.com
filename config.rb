@@ -1,6 +1,6 @@
 activate :blog do |blog|
   blog.prefix = "articles"
-  blog.sources = "{title}.html"
+  blog.sources = "posts/{title}.html"
   blog.permalink = "{title}.html"
   blog.layout = "blog_layout"
   blog.default_extension = ".md"
