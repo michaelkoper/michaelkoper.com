@@ -1,6 +1,7 @@
 ---
 title: Common mistakes developers make starting their first SaaS
 date: 2025-09-23
+published: false
 ---
 
 # Common mistakes developers make starting their first SaaS
