@@ -29,6 +29,10 @@ configure :build do
 end
 
 helpers do
+  def full_url(path = current_page.url)
+    "https://michaelkoper.com#{path}"
+  end
+
   def svg(name)
     root = Middleman::Application.root
     file_path = "#{root}/source/images/#{name}.svg"

@@ -17,13 +17,18 @@
     <link rel="canonical" href="https://michaelkoper.com<%= current_page.url %>" />
 
     <meta property="og:title" content="<%= title %>" />
-    <meta property="og:url" content="https://michaelkoper.com<%= current_page.url %>" />
+    <meta property="og:url" content="<%= full_url %>" />
     <meta property="og:description" content="<%= description %>" />
     <meta property="og:site_name" content="Michael Koper" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://ogkit.dev/img/gy1Es5R9.jpeg?url=<%= ERB::Util.url_encode(full_url) %>" />
 
-    <meta property="twitter:description" content="<%= description %>" />
-    <meta property="twitter:site" content="@michaelkoper" />
-    <meta property="twitter:creator" content="@michaelkoper" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= title %>" />
+    <meta name="twitter:description" content="<%= description %>" />
+    <meta name="twitter:site" content="@michaelkoper" />
+    <meta name="twitter:creator" content="@michaelkoper" />
+    <meta name="twitter:image" content="https://ogkit.dev/img/gy1Es5R9.jpeg?url=<%= ERB::Util.url_encode(full_url) %>" />
 
     <script src="https://use.typekit.net/hyd3srd.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -42,5 +47,19 @@
       <p><%= link_to "← Back to articles", "/articles/", class: "text-white font-bold no-underline border-b border-gray-border hover:border-white transition-colors" %></p>
     </div>
     <%= javascript_include_tag "main" %>
+
+    <template data-og-template>
+      <div class="p-16 w-full h-full flex flex-col items-center justify-center bg-purple-dark text-purple-light font-calluna">
+        <p class="text-2xl text-lime mb-4">michaelkoper.com</p>
+        <h1 class="text-6xl font-bold text-center leading-tight"><%= title %></h1>
+        <% if current_page.data.date %>
+          <p class="text-2xl mt-6 opacity-70"><%= current_page.data.date.strftime('%B %d, %Y') %></p>
+        <% end %>
+      </div>
+    </template>
+
+    <% if development? %>
+      <script defer src="https://cdn.jsdelivr.net/npm/ogkit@1"></script>
+    <% end %>
   </body>
 </html>

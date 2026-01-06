@@ -17,13 +17,18 @@
     <link rel="canonical" href="https://michaelkoper.com/" /  >
 
     <meta property="og:title" content="<%= title %>" />
-    <meta property="og:url" content="https://michaelkoper.com/" />
+    <meta property="og:url" content="<%= full_url %>" />
     <meta property="og:description" content="<%= description %>" />
     <meta property="og:site_name" content="Michael Koper" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://ogkit.dev/img/gy1Es5R9.jpeg?url=<%= ERB::Util.url_encode(full_url) %>" />
 
-    <meta property="twitter:description" content="<%= description %>" />
-    <meta property="twitter:site" content="@michaelkoper" />
-    <meta property="twitter:creator" content="@michaelkoper" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= title %>" />
+    <meta name="twitter:description" content="<%= description %>" />
+    <meta name="twitter:site" content="@michaelkoper" />
+    <meta name="twitter:creator" content="@michaelkoper" />
+    <meta name="twitter:image" content="https://ogkit.dev/img/gy1Es5R9.jpeg?url=<%= ERB::Util.url_encode(full_url) %>" />
 
     <script src="https://use.typekit.net/hyd3srd.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -36,5 +41,16 @@
       <%= yield %>
     </div>
     <%= javascript_include_tag "main" %>
+
+    <template data-og-template>
+      <div class="p-16 w-full h-full flex flex-col items-center justify-center bg-purple-dark text-purple-light font-calluna">
+        <h1 class="text-7xl font-bold text-center"><%= title %></h1>
+        <p class="text-3xl mt-6 text-lime">michaelkoper.com</p>
+      </div>
+    </template>
+
+    <% if development? %>
+      <script defer src="https://cdn.jsdelivr.net/npm/ogkit@1"></script>
+    <% end %>
   </body>
 </html>
