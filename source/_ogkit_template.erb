@@ -1,0 +1,25 @@
+<template data-og-template>
+  <div class="w-full h-full flex flex-col p-20 bg-purple-dark font-calluna">
+    <div class="flex items-center space-x-8">
+      <img src="/images/michaelkoper.jpg" alt="Michael Koper" class="w-24 h-24 rounded-full ring-4 ring-purple-light shadow-sm" />
+      <div class="leading-tight">
+        <p class="text-3xl font-semibold text-purple-light">Michael Koper</p>
+        <p class="text-2xl text-lime">michaelkoper.com</p>
+      </div>
+    </div>
+
+    <div class="mt-auto mb-24">
+      <h1 class="text-6xl font-bold tracking-tight leading-tight text-purple-light"><%= title %></h1>
+      <% if current_page.data.date %>
+        <p class="mt-6 text-3xl leading-snug text-purple-light opacity-70"><%= current_page.data.date.strftime('%B %d, %Y') %></p>
+      <% end %>
+    </div>
+  </div>
+</template>
+
+<% if development? %>
+  <script defer src="https://cdn.jsdelivr.net/npm/ogkit@1"></script>
+  <p class="fixed bottom-4 right-4 text-sm">
+    <a href="<%= current_page.url %>?ogkit-render" class="text-lime underline">Preview OG image</a>
+  </p>
+<% end %>
