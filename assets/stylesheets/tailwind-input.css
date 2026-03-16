@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./syntax.css";
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -35,5 +36,13 @@
 
   .prose figcaption {
     @apply text-center mt-2;
+  }
+
+  .prose .highlight {
+    @apply rounded-lg p-4 overflow-x-auto text-sm leading-relaxed;
+  }
+
+  .prose .highlight pre {
+    @apply m-0;
   }
 }

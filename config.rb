@@ -13,6 +13,7 @@ activate :external_pipeline do |pipeline|
   pipeline.latency = 1
 end
 
+activate :syntax
 activate :directory_indexes
 
 configure :development do
