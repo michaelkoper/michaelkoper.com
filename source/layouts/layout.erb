@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en" class="antialiased scheme-only-dark">
   <head>
     <% description = current_page.data.description || "Michael Koper, a Dutch full-stack developer living in Madrid, Spain. Founder of Nusii" %>
     <% title = current_page.data.title || "Personal website of Michael Koper - Founder Nusii" %>
@@ -12,9 +12,11 @@
 
     <title><%= current_page.data.title || "Personal website of Michael Koper - Co-founder Nusii - Software Engineer" %></title>
 
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/hyd3srd.css">
     <%= stylesheet_link_tag "tailwind" %>
 
-    <link rel="canonical" href="https://michaelkoper.com/" /  >
+    <link rel="canonical" href="<%= full_url %>" />
 
     <meta property="og:title" content="<%= title %>" />
     <meta property="og:url" content="<%= full_url %>" />
@@ -30,16 +32,16 @@
     <meta name="twitter:creator" content="@michaelkoper" />
     <meta name="twitter:image" content="https://ogkit.dev/img/gy1Es5R9.jpeg?url=<%= ERB::Util.url_encode(full_url) %>" />
 
-    <script src="https://use.typekit.net/hyd3srd.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
     <script src="https://cdn.usefathom.com/script.js" data-site="LNDZXZRW" defer></script>
   </head>
-  <body class="font-calluna text-lg leading-relaxed font-light bg-purple-dark text-purple-light px-8 antialiased md:text-2xl md:leading-8">
+  <body class="flex min-h-dvh flex-col bg-purple-dark font-calluna text-lg/8 font-light text-purple-light">
     <%= partial "header" %>
-    <div class="max-w-3xl mx-auto mt-12 md:mt-48">
-      <%= yield %>
-    </div>
+    <main class="isolate flex-1 py-12 md:py-24">
+      <div class="mx-auto w-full max-w-2xl px-6">
+        <%= yield %>
+      </div>
+    </main>
+    <%= partial "footer" %>
     <%= javascript_include_tag "main" %>
 
     <%= partial "ogkit_template", locals: { title: title } %>

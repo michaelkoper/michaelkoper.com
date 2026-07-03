@@ -6,29 +6,35 @@ changefreq: "weekly"
 priority: "1"
 ---
 
-<p class="text-2xl mb-4">
-  Hey! I'm <em class="font-bold font-normal text-lime">Michael Koper</em>. I'm building <a href="https://nusii.com" target="_blank" class="font-bold text-white no-underline border-b border-gray-border hover:border-white transition-colors">Nusii</a>, a SaaS to create beautiful online proposals. I previously worked at <a href="https://cabify.com" target="_blank" class="font-bold text-white no-underline border-b border-gray-border hover:border-white transition-colors">Cabify</a> as employee <em class="font-bold font-normal text-white">#1</em>.
+<img src="/images/michaelkoper.jpg" alt="" class="size-20 rounded-full outline-1 -outline-offset-1 outline-white/10">
+
+<h1 class="mt-8 max-w-[30ch] text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+  Hey, I'm Michael Koper
+</h1>
+
+<p class="mt-6 max-w-[48ch] text-pretty">
+  I'm a Dutch software engineer living in Madrid, Spain. I'm building <a href="https://nusii.com" target="_blank" rel="noopener" class="text-lime underline decoration-lime/40 underline-offset-4 hover:decoration-lime">Nusii</a>, a SaaS to create beautiful online proposals, and I previously worked at <a href="https://cabify.com" target="_blank" rel="noopener" class="text-lime underline decoration-lime/40 underline-offset-4 hover:decoration-lime">Cabify</a> as employee #1.
 </p>
 
-<div class="flex items-center gap-2 text-lg text-gray-400 flex items-center">
-  <span>
-    Current projects: <a href="https://nusii.com" target="_blank" class="font-bold text-white no-underline border-b border-gray-border hover:border-white transition-colors">Nusii</a>.
-  </span>
-  <span>
-    Social:
-  </span>
-  <div class="flex gap-3 pt-2 items-center">
-    <a href="https://twitter.com/michaelkoper" class="social-icon" target="_blank">
-      <%= svg('social/twitter') %>
-    </a>
-    <a href="https://bsky.app/profile/michaelkoper.com" class="social-icon" target="_blank">
-      <%= svg('social/bluesky') %>
-    </a>
-    <a href="https://www.linkedin.com/in/michaelkoper/" class="social-icon" target="_blank">
-      <%= svg('social/linkedin') %>
-    </a>
-    <a href="https://github.com/michaelkoper" class="social-icon" target="_blank">
-      <%= svg('social/github') %>
-    </a>
-  </div>
+<div class="mt-8 flex items-center gap-5">
+  <%= partial "social_links" %>
 </div>
+
+<section class="mt-20">
+  <h2 class="text-2xl font-semibold tracking-tight text-balance text-white">Writing</h2>
+  <ul role="list" class="mt-6 space-y-6">
+    <% blog.articles.first(3).each do |article| %>
+      <li>
+        <article>
+          <h3 class="text-xl font-semibold text-balance"><%= link_to article.title, article, class: "text-white underline-offset-4 hover:underline" %></h3>
+          <p class="mt-1 text-base text-purple-light/70 sm:text-sm">
+            <time datetime="<%= article.date.strftime('%Y-%m-%d') %>"><%= article.date.strftime('%B %-e, %Y') %></time>
+          </p>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+  <p class="mt-8">
+    <%= link_to "All articles →", "/articles/", class: "text-lime underline decoration-lime/40 underline-offset-4 hover:decoration-lime" %>
+  </p>
+</section>

@@ -1,6 +1,9 @@
 <header class="py-6">
-  <nav class="flex justify-center gap-8">
-    <%= link_to "Home", "/", class: "text-purple-light no-underline border-b border-transparent hover:border-purple-light transition-colors" %>
-    <%= link_to "Articles", "/articles/", class: "text-purple-light no-underline border-b border-transparent hover:border-purple-light transition-colors" %>
-  </nav>
+  <div class="mx-auto flex w-full max-w-2xl items-center justify-between px-6">
+    <a href="/" aria-label="Homepage" class="font-semibold text-white">Michael Koper</a>
+    <nav class="flex gap-6">
+      <%= link_to "Home", "/", class: "text-purple-light/80 hover:text-white aria-[current=page]:text-white" %>
+      <%= link_to "Articles", "/articles/", class: "text-purple-light/80 hover:text-white aria-[current=page]:text-white" %>
+    </nav>
+  </div>
 </header>

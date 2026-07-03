@@ -34,11 +34,14 @@ helpers do
     "https://michaelkoper.com#{path}"
   end
 
-  def svg(name)
+  def svg(name, css_class = nil)
     root = Middleman::Application.root
     file_path = "#{root}/source/images/#{name}.svg"
-    return File.read(file_path) if File.exists?(file_path)
-    '(not found)'
+    return '(not found)' unless File.exists?(file_path)
+
+    content = File.read(file_path)
+    content = content.sub('<svg', "<svg class=\"#{css_class}\"") if css_class
+    content
   end
 
   def link_to(*args, &block)

@@ -1,48 +1,146 @@
 @import "tailwindcss";
 @import "./syntax.css";
-@plugin "@tailwindcss/typography";
 
 @theme {
-  /* Custom colors from the original design */
+  /* Brand colors */
   --color-purple-dark: #3c1781;
   --color-purple-light: #dfcdff;
   --color-lime: #a7b911;
-  --color-gray-border: #5c5c5c;
-  --color-yellow-hover: #bd8c11;
 
   /* Custom font family */
   --font-calluna: "calluna", serif;
 }
 
-/* Custom styles for SVG icons */
-@layer utilities {
-  .social-icon svg {
-    margin-top: -11px;
+/* Article body — styles raw HTML rendered from markdown */
+@utility prose {
+  font-size: var(--text-lg);
+  line-height: --spacing(8);
+  text-wrap: pretty;
+
+  & > * + * {
+    margin-top: --spacing(6);
   }
 
-  .social-icon svg path {
-    transition: fill 0.1s linear;
-    fill: #dfcdff;
+  & h1 {
+    font-size: var(--text-4xl);
+    line-height: var(--text-4xl--line-height);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-white);
   }
 
-  .social-icon:hover svg path {
-    fill: #bd8c11;
+  & > * + h2 {
+    margin-top: --spacing(12);
   }
 
-  [aria-current="page"] {
-    color: white;
-    border-color: #dfcdff;
+  & h2 {
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-white);
+    text-wrap: balance;
   }
 
-  .prose figcaption {
-    @apply text-center mt-2;
+  & > * + h3 {
+    margin-top: --spacing(10);
   }
 
-  .prose .highlight {
-    @apply rounded-lg p-4 overflow-x-auto text-sm leading-relaxed;
+  & h3 {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    text-wrap: balance;
   }
 
-  .prose .highlight pre {
-    @apply m-0;
+  & a {
+    color: var(--color-lime);
+    text-decoration-line: underline;
+    text-decoration-color: --alpha(var(--color-lime) / 40%);
+    text-underline-offset: 4px;
+
+    @variant hover {
+      text-decoration-color: var(--color-lime);
+    }
+  }
+
+  & strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+  }
+
+  & ul {
+    list-style-type: disc;
+    padding-left: --spacing(6);
+  }
+
+  & ol {
+    list-style-type: decimal;
+    padding-left: --spacing(6);
+  }
+
+  & li + li {
+    margin-top: --spacing(2);
+  }
+
+  & li::marker {
+    color: --alpha(var(--color-white) / 40%);
+  }
+
+  & blockquote {
+    border-left: 3px solid --alpha(var(--color-white) / 20%);
+    padding-left: --spacing(5);
+    font-style: italic;
+  }
+
+  & code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--color-white);
+    background-color: --alpha(var(--color-white) / 10%);
+    border-radius: var(--radius-md);
+    padding: 0.125em 0.375em;
+  }
+
+  & .highlight {
+    background-color: --alpha(var(--color-black) / 30%);
+    box-shadow: inset 0 0 0 1px --alpha(var(--color-white) / 10%);
+    border-radius: var(--radius-lg);
+    padding: --spacing(4);
+    overflow-x: auto;
+    font-size: var(--text-sm);
+    line-height: --spacing(6);
+  }
+
+  & .highlight pre {
+    margin: 0;
+  }
+
+  & .highlight code {
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  & img {
+    border-radius: min(1vw, 12px);
+    outline: 1px solid --alpha(var(--color-white) / 10%);
+    outline-offset: -1px;
+  }
+
+  & figcaption {
+    margin-top: --spacing(3);
+    text-align: center;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    color: --alpha(var(--color-purple-light) / 70%);
+  }
+
+  & > hr {
+    margin-block: --spacing(12);
+    border-color: --alpha(var(--color-white) / 10%);
   }
 }
